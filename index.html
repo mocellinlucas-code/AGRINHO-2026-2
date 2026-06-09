@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte - Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS embutido como backup caso o arquivo style.css não carregue imediatamente */
+        body { font-family: 'Open Sans', sans-serif; margin: 0; color: #333; }
+        .navbar { background: #2e7d32; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.8rem; }
+        .nav-menu { list-style: none; display: flex; gap: 2rem; margin: 0; }
+        .nav-menu a { color: white; text-decoration: none; font-weight: 600; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/random/1600x900/?farm') center/cover no-repeat; height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .section { padding: 80px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .cta-button { background: #4caf50; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 20px; }
+        footer { background: #1b5e20; color: white; text-align: center; padding: 30px; }
+        .hamburger { display: none; cursor: pointer; }
+        .hamburger span { display: block; width: 25px; height: 3px; background: white; margin: 5px; }
+        @media (max-width: 768px) {
+            .nav-menu { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: #2e7d32; }
+            .nav-menu.active { display: flex; }
+            .hamburger { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">🌱 AgroForte</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#producao">Produção</a></li>
+                <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+                <li><a href="#desafios">Desafios</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p>Equilíbrio entre produção agrícola e preservação ambiental</p>
+            <a href="#producao" class="cta-button">Conheça o Projeto</a>
+        </div>
+    </section>
+
+    <section id="producao" class="section">
+        <div class="container">
+            <h2>Produção Agrícola</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Importância Econômica</h3>
+                    <p>O agronegócio representa cerca de 23-29% do PIB brasileiro, gera milhões de empregos e é líder em exportações (soja, milho, café etc.).</p>
+                </div>
+                <div class="card">
+                    <h3>Tecnologias Utilizadas</h3>
+                    <p>Agricultura de precisão, drones agrícolas, irrigação inteligente e sensores IoT aumentam a produtividade com menos recursos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sustentabilidade" class="section" style="background:#f1f8e9;">
+        <div class="container">
+            <h2>Sustentabilidade no Campo</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Práticas Ecológicas</h3>
+                    <p>Conservação do solo, rotação de culturas, plantio direto e integração lavoura-pecuária-floresta.</p>
+                </div>
+                <div class="card">
+                    <h3>Energias Renováveis</h3>
+                    <p>Uso de energia solar, biodigestores e outras fontes limpas nas propriedades rurais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="desafios" class="section">
+        <div class="container">
+            <h2>Desafios Ambientais</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Principais Problemas</h3>
+                    <p>Desmatamento, alto consumo de água, emissões de carbono e perda de biodiversidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucoes" class="section" style="background:#f1f8e9;">
+        <div class="container">
+            <h2>Soluções e Futuro</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Inovações Tecnológicas</h3>
+                    <p>Agricultura regenerativa, drones, IA e monitoramento por satélite.</p>
+                </div>
+                <div class="card">
+                    <h3>Calculadora de Impacto (Demo)</h3>
+                    <label>Área plantada (hectares): <input type="number" id="area" value="100" style="width:120px"></label><br><br>
+                    <button onclick="calcular()">Calcular Impacto</button>
+                    <p id="resultado" style="margin-top:15px; font-weight:bold;"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section">
+        <div class="container">
+            <h2>Conscientização e Contato</h2>
+            <form id="form-contato" style="max-width:600px; margin:0 auto;">
+                <input type="text" placeholder="Seu Nome" required style="width:100%; padding:12px; margin:10px 0;"><br>
+                <input type="email" placeholder="Seu Email" required style="width:100%; padding:12px; margin:10px 0;"><br>
+                <textarea placeholder="Sua mensagem ou sugestão" rows="6" style="width:100%; padding:12px; margin:10px 0;"></textarea><br>
+                <button type="submit" style="background:#2e7d32; color:white; padding:15px 30px; border:none; border-radius:8px; cursor:pointer;">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Agro Forte - Equilíbrio entre Produção e Meio Ambiente</p>
+            <p>Resposta à pergunta norteadora: <strong>Crescendo com tecnologia, regenerando o solo e respeitando os limites naturais.</strong></p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Formulário
+        document.getElementById('form-contato').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! Obrigado por contribuir com a sustentabilidade.');
+        });
+
+        function calcular() {
+            const area = document.getElementById('area').value;
+            document.getElementById('resultado').innerHTML = `Para ${area} hectares, práticas sustentáveis podem reduzir até 20-30% das emissões e economizar milhares de litros de água.`;
+        }
+    </script>
+</body>
+</html>
